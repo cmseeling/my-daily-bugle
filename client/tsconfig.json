@@ -1,0 +1,16 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "include": ["src", "styled-system"],
+  "compilerOptions": {
+    "paths": {
+      "styled-system": ["./styled-system"],
+      "$components": ["./src/components"],
+      "$api": ["./src/api"],
+      "$storybook": ["./src/storybook"],
+    }
+  }
+}
