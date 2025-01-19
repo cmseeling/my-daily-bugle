@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { Button, Label } from "bits-ui";
-  import { css } from "styled-system/css";
+  import { Button, Label } from 'bits-ui';
+  import { css } from 'styled-system/css';
 
   interface Props {
     onSubmit: (value: string) => void;
@@ -8,14 +8,14 @@
 
   let { onSubmit }: Props = $props();
 
-  let inputValue = $state("");
+  let inputValue = $state('');
 </script>
 
 <div
   class={css({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   })}
 >
   <Label.Root id="name-input-label" for="name-input">Add a name:</Label.Root>

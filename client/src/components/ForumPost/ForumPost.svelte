@@ -1,12 +1,14 @@
-<script lang="ts">
-  import { css } from "styled-system/css";
-  import type { CssProperty } from "styled-system/types";
-  import type { ForumPost } from "$api/interfaces/ForumPost";
-
-  interface ForumPostProps extends ForumPost {
+<script module lang="ts">
+  export interface ForumPostProps extends ForumPost {
     showThumbnail?: boolean;
     css?: CssProperty;
   }
+</script>
+
+<script lang="ts">
+  import { css } from 'styled-system/css';
+  import type { CssProperty } from 'styled-system/types';
+  import type { ForumPost } from '$api/interfaces/ForumPost';
 
   let {
     commentCount,
@@ -19,24 +21,24 @@
     thumbnailUrl,
     tags,
     timePosted,
-    title,
+    title
   } = $props();
 
   const metaDataClass = css({
     _after: {
       content: "'•'",
-      color: "text.subdued",
-      margin: "0 0.5rem",
-      position: "relative",
-    },
+      color: 'text.subdued',
+      margin: '0 0.5rem',
+      position: 'relative'
+    }
   });
 </script>
 
 <div
   class={css(
     {
-      display: "flex",
-      gap: "1",
+      display: 'flex',
+      gap: '1'
     },
     cssProp
   )}
@@ -47,14 +49,14 @@
   <div
     class={css({
       flexGrow: 1,
-      minWidth: 0,
+      minWidth: 0
     })}
   >
     <a
       class={css({
-        fontSize: "1.5rem",
-        color: "links.unread",
-        _visited: { color: "links.visited" },
+        fontSize: '1.5rem',
+        color: 'links.unread',
+        _visited: { color: 'links.visited' }
       })}
       href={discussionUrl}
       target="_blank"
@@ -63,20 +65,20 @@
     {#if tags.length > 0}
       <div
         class={css({
-          display: "inline-block",
-          marginX: "2",
-          transform: "translateY(-0.2rem)",
+          display: 'inline-block',
+          marginX: '2',
+          transform: 'translateY(-0.2rem)'
         })}
       >
-        <ul class={css({ display: "flex", flexWrap: "wrap", gap: "0.5rem" })}>
+        <ul class={css({ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' })}>
           {#each tags as tag}
             <li
               class={css({
-                rounded: "md",
-                padding: "0.1rem 0.5rem",
-                fontSize: "1.1rem",
-                bg: "highlight",
-                color: "text.dark",
+                rounded: 'md',
+                padding: '0.1rem 0.5rem',
+                fontSize: '1.1rem',
+                bg: 'highlight',
+                color: 'text.dark'
               })}
             >
               {tag}
@@ -87,10 +89,10 @@
     {/if}
     <ul
       class={css({
-        display: "flex",
-        flexWrap: "wrap",
-        alightItems: "center",
-        listStyle: "none",
+        display: 'flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        listStyle: 'none'
       })}
     >
       <li class={metaDataClass}>
@@ -99,23 +101,23 @@
       <li class={metaDataClass}>
         {score} points
       </li>
-      <li class={targetUrl ? metaDataClass : ""}>{commentCount} comments</li>
+      <li class={targetUrl ? metaDataClass : ''}>{commentCount} comments</li>
       {#if targetUrl}
         <li class={css({ minWidth: 0 })}>
           <a
             class={css({
-              display: "block",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              whiteSpace: "nowrap",
+              display: 'block',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
               _after: {
                 content: "'↗'",
-                marginLeft: "0.5rem",
-                display: "inline-block",
-                position: "relative",
-                top: "0.15rem",
-                color: "text.regular",
-              },
+                marginLeft: '0.5rem',
+                display: 'inline-block',
+                position: 'relative',
+                top: '0.15rem',
+                color: 'text.regular'
+              }
             })}
             href={targetUrl}
             target="_blank"

@@ -1,16 +1,16 @@
 <script module>
-  import { defineMeta } from "@storybook/addon-svelte-csf";
-  import { fn } from "@storybook/test";
-  import ComboInput from "./ComboInput.svelte";
+  import { defineMeta } from '@storybook/addon-svelte-csf';
+  import { fn } from '@storybook/test';
+  import ComboInput from './ComboInput.svelte';
 
   // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
   const { Story } = defineMeta({
-    title: "Components/ComboInput",
+    title: 'Components/ComboInput',
     component: ComboInput,
     // tags: ['autodocs'],
     args: {
-      onSubmit: console.log,
-    },
+      onSubmit: console.log
+    }
   });
 </script>
 

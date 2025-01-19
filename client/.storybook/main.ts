@@ -1,16 +1,29 @@
-import type { StorybookConfig } from "@storybook/svelte-vite";
+import { defineConfig, mergeConfig } from 'vite';
 
-const config: StorybookConfig = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|ts|svelte)"],
+/** @type { import('@storybook/sveltekit').StorybookConfig } */
+const config = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|ts|svelte)'],
   addons: [
-    "@storybook/addon-svelte-csf",
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    '@storybook/addon-svelte-csf',
+    '@storybook/addon-essentials',
+    '@chromatic-com/storybook',
+    '@storybook/addon-interactions'
   ],
   framework: {
-    name: "@storybook/svelte-vite",
-    options: {},
+    name: '@storybook/sveltekit',
+    options: {}
   },
+  viteFinal: async (config) => {
+    return mergeConfig(
+      config,
+      defineConfig({
+        server: {
+          fs: {
+            allow: ['styled-system']
+          }
+        }
+      })
+    );
+  }
 };
 export default config;

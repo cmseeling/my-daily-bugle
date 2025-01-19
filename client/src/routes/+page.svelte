@@ -1,23 +1,23 @@
 <script>
-  import NameInput from "$components/ComboInput/ComboInput.svelte";
-  import ForumPost from "$components/ForumPost/ForumPost.svelte";
-  import { css } from "styled-system/css";
+  import NameInput from '$components/ComboInput/ComboInput.svelte';
+  import ForumPost from '$components/ForumPost/ForumPost.svelte';
+  import { css } from 'styled-system/css';
 
-  let name = $state("");
+  let name = $state('');
 </script>
 
 <div
   class={css({
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   })}
 >
   <div
     class={css({
-      fontSize: "2xl",
-      fontWeight: "bold",
-      marginTop: "5rem",
+      fontSize: '2xl',
+      fontWeight: 'bold',
+      marginTop: '5rem'
     })}
   >
     Hello {name} 🐼!
@@ -28,7 +28,7 @@
       name = value;
     }}
     class={css({
-      marginX: "10rem",
+      marginX: '10rem'
     })}
   />
   <ForumPost
@@ -40,7 +40,7 @@
     timePosted={new Date(2017, 6, 17, 9, 13, 31)}
     title="How to start learning to code when you don't know where to start"
     css={{
-      marginX: "10rem",
+      marginX: '10rem'
     }}
   />
 </div>

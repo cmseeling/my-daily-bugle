@@ -1,16 +1,14 @@
-import { defineConfig } from "vite";
-import { svelte } from "@sveltejs/vite-plugin-svelte";
-import path from "path";
+import { defineConfig } from 'vitest/config';
+import { sveltekit } from '@sveltejs/kit/vite';
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-  resolve: {
-    alias: {
-      "styled-system": path.resolve(__dirname, "./styled-system"),
-      $components: path.resolve(__dirname, "./src/components"),
-      $api: path.resolve(__dirname, "./src/api"),
-      $storybook: path.resolve(__dirname, "./src/storybook"),
-    },
+  plugins: [sveltekit()],
+  server: {
+    fs: {
+      allow: ['styled-system']
+    }
   },
+  test: {
+    include: ['src/**/*.{test,spec}.{js,ts}']
+  }
 });
