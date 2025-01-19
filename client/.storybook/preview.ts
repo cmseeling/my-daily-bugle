@@ -11,7 +11,12 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      values: [{ name: "mocha", value: "#1e1e2e" }],
+      values: [
+        { name: "mocha", value: "#1e1e2e" },
+        { name: "latte", value: "#eff1f5" },
+        { name: "frappe", value: "#303446" },
+        { name: "macchiato", value: "#24273a" }
+      ],
     },
   },
 };
